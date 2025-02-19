@@ -38,7 +38,7 @@ TypeScript carries too much JS baggage. Here's why alternatives are _necessary_:
 
 ## The Value of Niche Languages (Beyond Adoption): A Lesson from CoffeeScript
 
-Even if a new language like doesn't immediately achieve TypeScript-level adoption, it still holds significant value. We can see a clear precedent for this in the history of JavaScript itself, specifically with the example of [**CoffeeScript**](https://coffeescript.org/).
+Even if a new language doesn't immediately achieve TypeScript-level adoption, it still holds significant value. We can see a clear precedent for this in the history of JavaScript itself, specifically with the example of [**CoffeeScript**](https://coffeescript.org/).
 
 CoffeeScript, while never becoming as ubiquitous as JavaScript, had a _profound_ impact on the evolution of the language. It introduced cleaner syntax, and new features like arrow functions, destructuring, better falsiness checks, and even classes and cool ideas like "nullish coalescing" and optional chaining. These ideas, initially niche within the CoffeeScript community, were eventually adopted into the ECMAScript standard (ES6 and beyond). CoffeeScript _pushed_ JavaScript forward, even though many developers never directly wrote CoffeeScript code.
 
