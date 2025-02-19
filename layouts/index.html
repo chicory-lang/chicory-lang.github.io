@@ -1,0 +1,63 @@
+{{ define "main" }}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1>{{ .Title }}</h1>
+    </div>
+    <div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}reference/variables/" role="button">{{ i18n "get_started" }}</a>
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "sidebar-prefooter" }}
+  {{ if site.Params.doks.backgroundDots -}}
+  <div class="d-flex justify-content-start">
+    <div class="bg-dots"></div>
+  </div>
+  {{ end -}}
+  {{ if eq $.Site.Language.LanguageName "English" }}
+  <section class="section section-md section-features">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-5">
+          <h2 class="h4">Static Types</h2>
+          <p>Don't sweat refactoring. If your code compiles, it will not crash at runtime.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Functional-Friendly</h2>
+          <p>Chicory has Algebraic Data Types, pattern matching, and if-expressions. But it's not not <strong>pure</strong>.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Compile to JSX</h2>
+          <p>The Javascript ecosystem is too big to ignore. Chicory compiles to JSX, so you can use it with frameworks like React, Preact, and Solid.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Javascript Interop</h2>
+          <p>The Javascript ecosystem is too big to ignore. With bindings, you can use Javascript libraries from Chicory.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Familiar & Safe</h2>
+          <p>Chicory is blindingly easy to learn if you already know Javascript/Typescript. It removes footguns and adds guardrails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{ define "sidebar-footer" }}
+{{ if site.Params.doks.sectionFooter -}}
+<section class="section section-md container-fluid bg-light">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-7">
+      <h2 class="mt-2">Start building with Doks today</h2>
+      <a class="btn btn-primary rounded-pill px-4 my-2" href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}prologue/introduction/" role="button">{{ i18n "get-started" }}</a>
+    </div>
+  </div>
+</section>
+{{ end -}}
+{{ end }}
