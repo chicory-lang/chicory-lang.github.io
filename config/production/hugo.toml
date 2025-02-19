@@ -1,2 +1,3 @@
 # Overrides for production environment
+title = "Chicory"
 baseurl = "https://chicory-lang.github.io/"
