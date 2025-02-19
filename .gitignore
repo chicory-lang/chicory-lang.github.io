@@ -2,3 +2,4 @@ node_modules/
 .devcontainer/
 .codesandbox/
 public/
+resources/
