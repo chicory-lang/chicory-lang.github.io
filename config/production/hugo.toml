@@ -1,3 +1,4 @@
 # Overrides for production environment
 title = "Chicory"
+description = "A Caffeine-free replacement for Javascript"
 baseurl = "https://chicory-lang.github.io/"
