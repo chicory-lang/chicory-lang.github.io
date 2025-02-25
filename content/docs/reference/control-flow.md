@@ -53,6 +53,8 @@ let message = match (a[1000]) {
 *   Patterns must be exhaustive, meaning they must cover all possible values of the expression.
 *   The `_` pattern matches anything, and is useful for a default case.
 *   Like `if`, the `{ ... }` block is optional and only required if the block contains multiple statements.
+*   Records and Tuples can be destructured (up to one level), including in ADTs
+*   Primitve typed values can be matched against literals (but not against identifiers, because of the ambiguity of whether assignment or comparison is happening)
 *   **Match Patterns**:
     *   `IDENTIFIER`: Matches a specific ADT option without parameters (Bare ADT Match Pattern).
     *   `IDENTIFIER(IDENTIFIER)`: Matches an ADT option with a parameter, binding the parameter to the identifier (ADT with Parameter Match Pattern).
