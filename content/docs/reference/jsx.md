@@ -21,11 +21,10 @@ const MyComponent = ({name, count}) =>
 
 *   **JSX Elements**: Start with an opening tag `<TagName>` and end with a closing tag `</TagName>`. Self-closing tags are also supported `<TagName />`.
 *   **JSX Attributes**:  Attributes are defined within the opening tag, like `name="Chicory"` or `count={10}`. Attribute values can be:
-    *   Strings: `"value"`
-    *   Expressions: `{expression}` (evaluated and inserted)
-    *   Numbers: `123`
+    *   Literal strings and numbers: `"value"` or `123`
+    *   Expressions: `{if (true) "Yes" else "No"}`
 *   **JSX Children**: Content within JSX tags can be:
-    *   Text: Plain text content.
-    *   Expressions: `{expression}` (evaluated and inserted).
-    *   Other JSX elements: Nested JSX structures.
+    *   Plain Text
+    *   Expressions
+    *   Other JSX elements
 * JSX expressions in Chicory compile to JSX. This allows Chicory to be used for frameworks like React, Preact, and Solid.
