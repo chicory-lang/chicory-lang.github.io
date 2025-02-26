@@ -33,31 +33,43 @@ const accent = if (hasGrail) "French" else "English"
 
 `match` expressions are used for pattern matching, particularly useful for working with ADTs.
 
+*   Patterns are tried in order. When a pattern matches, the corresponding expression is evaluated, and that's the result of the `match` expression.
+* Patterns must be exhaustive, meaning they must cover all possible values of the expression.
+* An identifier will destructure out the value in that place (implicitly matching anything).
+* The `_` pattern matches anything, but is not destructured. It is useful for the default case.
+* Like `if`, the `{ ... }` braces are optional and only required if the block contains multiple statements. But the `{ ... }` must evaluate to a value.
+
+A simple case where pattern matching is useful is where primitve typed values can be matched against literals.
+
 ```chicory
 let force = match (name) {
     "Skywalker" => Strong,
     "Palpatine" => Strong,
     _ => Weak
 }
+```
 
+**Note**: You can't use a variable in a match expression because of the ambiguity of whether assignment or comparison is happening.
+
+`match` takes an expression that may return an ADT. Using ADTs with pattern matching is a very productive (ahem) _pattern_, especially because it supports straightforward destructuring of values out of the ADT.
+
+```chicory
 // a is a `string[]`, indexing into it returns an `Option<string>`
 let message = match (a[1000]) {
     Some("Hello") => "The value was 'Hello'",
-    Some(v) => v,
+    Some(v) => "The value was not 'Hello'",
     None => "There was no value"
 }
 ```
 
-*   The `expression` is evaluated, and its value is matched against the patterns.
-*   Patterns are tried in order. When a pattern matches, the corresponding expression is evaluated, and that's the result of the `match` expression.
-*   Patterns must be exhaustive, meaning they must cover all possible values of the expression.
-*   The `_` pattern matches anything, and is useful for a default case.
-*   Like `if`, the `{ ... }` block is optional and only required if the block contains multiple statements.
-*   Records and Tuples can be destructured (up to one level), including in ADTs
-*   Primitve typed values can be matched against literals (but not against identifiers, because of the ambiguity of whether assignment or comparison is happening)
-*   **Match Patterns**:
-    *   `IDENTIFIER`: Matches a specific ADT option without parameters (Bare ADT Match Pattern).
-    *   `IDENTIFIER(IDENTIFIER)`: Matches an ADT option with a parameter, binding the parameter to the identifier (ADT with Parameter Match Pattern).
-    *   `IDENTIFIER(literal)`: Matches an ADT option with a parameter that is a specific literal value (ADT with Literal Match Pattern).
-    *   `_`: Wildcard pattern, matches anything (Wildcard Match Pattern).
-    *   `literal`: Matches a specific literal value (Literal Match Pattern).
+Records and Tuples can be destructured (up to one level), including in ADTs.
+
+```chicory
+let something = match (["str", -1, true]) {
+    [_, 1, _] => "foo"
+    [x, y, false] => "bar"
+    ["str", y, _] => "baz"
+}
+```
+
+**Note**: Right now, using `match` on a record doesn't make a lot of sense in chicory, since there is no way to require specific keys to have specific values (destrucutring matches anything). This is an area for further exploration. 
