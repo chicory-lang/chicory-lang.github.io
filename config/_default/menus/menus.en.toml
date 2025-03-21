@@ -41,7 +41,7 @@
 
 [[main]]
   name = "Playground"
-  url = "/playground"
+  url = "/play"
   weight = 30
 
 # [[social]]
