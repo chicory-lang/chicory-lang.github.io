@@ -29,7 +29,7 @@ const App = () => {
     const [user, setUser] = useState(Anonymous)
 
     match (user) {
-        Anonymous => <h1>{"Welcome, Guest!"}</h1>,
+        Anonymous => <h1>{"Welcome, Guest!"}</h1>
         LoggedIn(name) => <h1>{"Hello, " + name + "!"}</h1>
     }
 }

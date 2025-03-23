@@ -43,8 +43,8 @@ A simple case where pattern matching is useful is where primitve typed values ca
 
 ```chicory
 let force = match (name) {
-    "Skywalker" => Strong,
-    "Palpatine" => Strong,
+    "Skywalker" => Strong
+    "Palpatine" => Strong
     _ => Weak
 }
 ```
@@ -56,8 +56,8 @@ let force = match (name) {
 ```chicory
 // a is a `string[]`, indexing into it returns an `Option<string>`
 let message = match (a[1000]) {
-    Some("Hello") => "The value was 'Hello'",
-    Some(v) => "The value was not 'Hello'",
+    Some("Hello") => "The value was 'Hello'"
+    Some(v) => "The value was not 'Hello'"
     None => "There was no value"
 }
 ```
