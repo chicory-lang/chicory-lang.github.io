@@ -37,4 +37,4 @@ That's the idea behind **Chicory**, a new programming language I'm building to b
 * **"Let's Start at the Very Beginning": Seamless JavaScript Interop.** Chicory understands that you can't just throw out the entire JavaScript ecosystem. That's why it’s designed with excellent interoperability in mind. **You can import existing JavaScript libraries and code directly into Chicory.** So, you can start using Chicory in your projects incrementally, leveraging the vast JS landscape while gradually adopting a safer and more robust language (you'll need to write binding annotations when importing into Chicory).
 * **"Practically Perfect in Every Way": Compiles to JSX (and beyond).** Chicory's familiar syntax, interop story and the fact that it compiles to JSX make adoption easy. The fact that it provides runtime guarantees makes it simply supercalifragilisticexpialidocious.
 
-Sound like your cup of ~~tea~~ ~~java~~ ~~coffee~~ _chicory_? Give a star and/or contribute at https://github.com/chicory-lang/compiler
+Sound like your cup of ~~tea~~ ~~java~~ ~~coffee~~ _chicory_? Give a star and/or contribute at <https://github.com/chicory-lang/compiler>
